@@ -7,7 +7,7 @@ variable "aws" {
 
   default = {
     region     = "ap-northeast-2"
-    account_id = "900521233259"
+    account_id = "YOUR_ACCOUNT_ID"
     author     = "Beaver"
   }
 }

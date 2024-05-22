@@ -15,6 +15,22 @@ Globals:
     LoggingConfig:
       LogFormat: JSON
 Resources:
+  DataParserFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: DataParser
+      Handler: prj.data.parser.Main::handleRequest
+      Runtime: java17
+      Architectures:
+        - x86_64
+      MemorySize: 512
+      Events:
+        HelloWorld:
+          Type: Api
+          Properties:
+            Path: /data/parse
+            Method: post
+
   HelloWorldFunction:
     Type: AWS::Serverless::Function # More info about Function Resource: https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
     Properties:

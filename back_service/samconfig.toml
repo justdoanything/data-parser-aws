@@ -4,7 +4,7 @@ version = 0.1
 
 [default]
 [default.global.parameters]
-stack_name = "back"
+stack_name = "beaver-back-api"
 
 [default.build.parameters]
 cached = true
@@ -16,7 +16,11 @@ lint = true
 [default.deploy.parameters]
 capabilities = "CAPABILITY_IAM"
 confirm_changeset = true
-resolve_s3 = true
+s3_bucket = "beaver-back-sam-cli-bucket"
+s3_prefix = "beaver-back-stack-dev"
+region = "ap-northeast-2"
+disable_rollback = true
+image_repositories = []
 
 [default.package.parameters]
 resolve_s3 = true
